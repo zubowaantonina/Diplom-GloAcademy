@@ -16,7 +16,17 @@
   \******************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_scroll_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/scroll.js */ \"./modules/scroll.js\");\n/* harmony import */ var _modules_servicesModal_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/servicesModal.js */ \"./modules/servicesModal.js\");\n\r\n\r\n(0,_modules_scroll_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n(0,_modules_servicesModal_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\r\n\n\n//# sourceURL=webpack:///./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_scroll_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/scroll.js */ \"./modules/scroll.js\");\n/* harmony import */ var _modules_servicesModal_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/servicesModal.js */ \"./modules/servicesModal.js\");\n/* harmony import */ var _modules_modalRequest_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/modalRequest.js */ \"./modules/modalRequest.js\");\n\r\n\r\n\r\n(0,_modules_scroll_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n(0,_modules_servicesModal_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\r\n(0,_modules_modalRequest_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\r\n\n\n//# sourceURL=webpack:///./index.js?");
+
+/***/ }),
+
+/***/ "./modules/modalRequest.js":
+/*!*********************************!*\
+  !*** ./modules/modalRequest.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst modalRequest = () => {\r\n  const requestBtn = document.querySelector(\"#header .button\");\r\n  const overlay = document.querySelector(\".overlay\");\r\n  const requestModal = document.querySelector(\".header-modal\");\r\n  const closeBtn = requestModal.querySelector(\".header-modal__close\");\r\n\r\n  requestBtn.addEventListener(\"click\", () => {\r\n    requestModal.style.display = \"flex\";\r\n    document.body.style.overflow = \"hidden\";\r\n    overlay.style.display = \"flex\";\r\n  });\r\n\r\n  closeBtn.addEventListener(\"click\", () => {\r\n    requestModal.style.display = \"none\";\r\n    overlay.style.display = \"none\";\r\n    document.body.style.overflow = \"\"; //возвращает прокрутку\r\n  });\r\n  overlay.addEventListener(\"click\", (e) => {\r\n    if (!e.target.closest(\".header-modal\")) {\r\n      requestModal.style.display = \"none\";\r\n      overlay.style.display = \"none\";\r\n    }\r\n  });\r\n};\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modalRequest);\r\n\n\n//# sourceURL=webpack:///./modules/modalRequest.js?");
 
 /***/ }),
 
