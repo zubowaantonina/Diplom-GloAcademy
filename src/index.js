@@ -5,4 +5,4 @@ import timer from "./modules/timer.js";
 scroll();
 servicesModal();
 modalRequest();
-timer('21 may 2024');
+timer("21 may 2024");
