@@ -20,7 +20,6 @@ const timer = (deadline) => {
     minutes = padZero(minutes);
     hours = padZero(hours);
     days = padZero(days);
-    console.log(days);
     return { timeRemaining, days, hours, minutes, seconds };
   };
 
