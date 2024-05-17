@@ -49,9 +49,9 @@ const sendForm = () => {
         overlay.style.display = "none";
         document.body.style.overflow = "";
         replyModal.classList.add("show");
-        replyModal.style.position = 'fixed';
-        replyModal.style.left = '38%'
-        replyModal.style.top = '40%'
+        replyModal.style.position = "fixed";
+        replyModal.style.left = "38%";
+        replyModal.style.top = "40%";
 
         closeBtn.addEventListener("click", (e) => {
           e.preventDefault();
