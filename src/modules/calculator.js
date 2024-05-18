@@ -1,4 +1,5 @@
 const calculator = () => {
+  const body = document.querySelector(".balkony");
   const calcBlock = document.getElementById("calc");
   const area = document.getElementById("calc-input");
   const total = document.getElementById("calc-total");
@@ -14,22 +15,23 @@ const calculator = () => {
     totalValue = +calcTypeValue * +calcMaterialValue * +calcAreaValue;
     total.textContent = totalValue;
   };
-
-  calcBlock.addEventListener("input", (e) => {
-    if (
-      (e.target === type || e.target === material || e.target === area) &&
-      type.selectedIndex &&
-      material.selectedIndex &&
-      area.value
-    ) {
-      countCalc();
-    } else if (
-      !type.selectedIndex ||
-      !material.selectedIndex ||
-      area.value === ""
-    ) {
-      total.textContent = 0;
-    }
-  });
+  if (body) {
+    calcBlock.addEventListener("input", (e) => {
+      if (
+        (e.target === type || e.target === material || e.target === area) &&
+        type.selectedIndex &&
+        material.selectedIndex &&
+        area.value
+      ) {
+        countCalc();
+      } else if (
+        !type.selectedIndex ||
+        !material.selectedIndex ||
+        area.value === ""
+      ) {
+        total.textContent = 0;
+      }
+    });
+  }
 };
 export default calculator;
