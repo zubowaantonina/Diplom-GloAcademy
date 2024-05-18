@@ -535,6 +535,28 @@ input.error {
 #calc {
   background-color: #466a78;
 }
+#services.container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.service-content{
+  overflow: hidden;
+  position: relative;
+ padding-bottom: 50px;
+  display: flex;
+ 
+}
+.service-item{
+  height: 100%;
+  display: none;
+  flex: 0 0 50%;
+  /* display: none; */
+}
+.service-item.service-item-active{
+display: block;
+}
 .service-block {
   position: relative;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
@@ -1620,11 +1642,14 @@ input.error {
 }
 
 .services-arrows {
+position: absolute;
   display: flex;
   justify-content: space-between;
   width: 100px;
   margin: 15px auto;
   margin-top: 30px;
+  left: 550px;
+    top: 260px;
 }
 
 .services__arrow {
