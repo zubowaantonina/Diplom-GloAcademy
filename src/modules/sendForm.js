@@ -26,10 +26,22 @@ const sendForm = () => {
         }
       }
 
+      if (userName.value === "") {
+        userName.classList.add("error");
+      } else if (userName.value !== "" && userName.closest(".error")) {
+        console.log("full");
+        userName.classList.remove("error");
+      }
       if (
         !/[\d- ]{7,16}/.test(userPhone.value) ||
         !(userPhone.value.match(/\d/g).length >= 7)
       ) {
+        userPhone.classList.add("error");
+      } else {
+        userPhone.classList.remove("error");
+      }
+
+      if (userName.closest(".error") || userPhone.closest(".error")) {
         return;
       } else {
         fetch("https://jsonplaceholder.typicode.com/posts", {
@@ -44,6 +56,8 @@ const sendForm = () => {
 
         userName.value = "";
         userPhone.value = "";
+        userPhone.classList.remove("error");
+        userName.classList.remove("error");
         phoneRequestModal.style.display = "none";
         servicesModal.style.display = "none";
         overlay.style.display = "none";
