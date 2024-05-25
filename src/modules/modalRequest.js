@@ -23,11 +23,9 @@ const modalRequest = () => {
   });
   overlay.addEventListener("click", (e) => {
     if (!e.target.closest(".header-modal")) {
-    
       document.body.style.overflow = ""; //возвращает прокрутку
       requestModal.style.display = "none";
       overlay.style.display = "none";
-      
     }
   });
 };
