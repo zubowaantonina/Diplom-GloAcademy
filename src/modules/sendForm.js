@@ -56,6 +56,7 @@ const sendForm = () => {
         closeBtn.addEventListener("click", (e) => {
           e.preventDefault();
           replyModal.classList.remove("show");
+          document.body.style.overflow = ""
         });
       }
     });

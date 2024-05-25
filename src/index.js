@@ -5,7 +5,11 @@ import timer from "./modules/timer.js";
 import validateForm from "./modules/validateForm.js";
 import sendForm from "./modules/sendForm.js";
 import calculator from "./modules/calculator.js";
-import slider from "./modules/slider.js";
+// import {swiperServices} from "./modules/slider.js"
+import {benefitsSplide,serviceSplide} from "./modules/sliderSplade.js"
+
+
+
 scroll();
 servicesModal();
 modalRequest();
@@ -13,4 +17,6 @@ timer("21 may 2024");
 validateForm();
 sendForm();
 calculator();
-slider();
+// swiperServices()
+benefitsSplide();
+serviceSplide()
