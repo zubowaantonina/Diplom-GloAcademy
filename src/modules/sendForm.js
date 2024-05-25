@@ -43,7 +43,9 @@ const sendForm = () => {
       } else {
         userPhone.classList.remove("error");
       }
-
+      userPhone.addEventListener("focusout",()=>{
+        userPhone.classList.remove("error");
+      });
       if (userName.closest(".error") || userPhone.closest(".error")) {
         return;
       } else {
