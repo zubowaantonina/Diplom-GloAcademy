@@ -1,13 +1,19 @@
 const modalRequest = () => {
   const requestBtn = document.querySelector("#header .button");
+  const utpBtn = document.querySelector(".utp-button");
   const overlay = document.querySelector(".overlay");
   const requestModal = document.querySelector(".header-modal");
   const closeBtn = requestModal.querySelector(".header-modal__close");
-
-  requestBtn.addEventListener("click", () => {
+  const openModal = () => {
     requestModal.style.display = "flex";
     document.body.style.overflow = "hidden";
     overlay.style.display = "flex";
+  };
+  utpBtn.addEventListener("click", () => {
+    openModal();
+  });
+  requestBtn.addEventListener("click", () => {
+    openModal();
   });
 
   closeBtn.addEventListener("click", () => {
@@ -17,6 +23,7 @@ const modalRequest = () => {
   });
   overlay.addEventListener("click", (e) => {
     if (!e.target.closest(".header-modal")) {
+      document.body.style.overflow = ""; //возвращает прокрутку
       requestModal.style.display = "none";
       overlay.style.display = "none";
     }
