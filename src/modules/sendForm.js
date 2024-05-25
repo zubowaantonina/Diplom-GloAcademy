@@ -25,13 +25,13 @@ const sendForm = () => {
           data.orderPrice = total.textContent;
         }
       }
-    
+
       if (userName.value === "") {
         userName.classList.add("error");
-      } else  {
+      } else {
         userName.classList.remove("error");
       }
-      userName.addEventListener("focusout",()=>{
+      userName.addEventListener("focusout", () => {
         userName.classList.remove("error");
       });
 
@@ -43,7 +43,9 @@ const sendForm = () => {
       } else {
         userPhone.classList.remove("error");
       }
-
+      userPhone.addEventListener("focusout", () => {
+        userPhone.classList.remove("error");
+      });
       if (userName.closest(".error") || userPhone.closest(".error")) {
         return;
       } else {
