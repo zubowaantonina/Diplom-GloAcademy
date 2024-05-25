@@ -25,13 +25,16 @@ const sendForm = () => {
           data.orderPrice = total.textContent;
         }
       }
-
+    
       if (userName.value === "") {
         userName.classList.add("error");
-      } else if (userName.value !== "" && userName.closest(".error")) {
-        console.log("full");
+      } else  {
         userName.classList.remove("error");
       }
+      userName.addEventListener("focusout",()=>{
+        userName.classList.remove("error");
+      });
+
       if (
         !/[\d- ]{7,16}/.test(userPhone.value) ||
         !(userPhone.value.match(/\d/g).length >= 7)
@@ -66,7 +69,6 @@ const sendForm = () => {
         replyModal.style.position = "fixed";
         replyModal.style.left = "38%";
         replyModal.style.top = "40%";
-
         closeBtn.addEventListener("click", (e) => {
           e.preventDefault();
           replyModal.classList.remove("show");
