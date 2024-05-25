@@ -6,7 +6,7 @@ import validateForm from "./modules/validateForm.js";
 import sendForm from "./modules/sendForm.js";
 import calculator from "./modules/calculator.js";
 import {benefitsSplide,serviceSplide} from "./modules/sliderSplade.js"
-
+import certificates from "./modules/certificates.js";
 scroll();
 servicesModal();
 modalRequest();
@@ -16,4 +16,5 @@ sendForm();
 calculator();
 
 benefitsSplide();
-serviceSplide()
+serviceSplide();
+certificates()
