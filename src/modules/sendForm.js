@@ -8,7 +8,7 @@ const sendForm = () => {
       const userName = form.querySelector('input[name="fio"]');
       const userPhone = form.querySelector('input[name="phone"]');
       const replyModal = document.querySelector("#responseMessage");
-      const modalContent=replyModal.querySelector('.modal-content')
+      const modalContent = replyModal.querySelector(".modal-content");
       const closeBtn = replyModal.querySelector(".btn.btn-success.fancyClose");
       const overlay = document.querySelector(".overlay");
       const phoneRequestModal = document.querySelector(".header-modal");
@@ -69,14 +69,14 @@ const sendForm = () => {
         overlay.style.display = "none";
         document.body.style.overflow = "";
         replyModal.classList.add("show");
-        modalContent.innerHTML="Ваша заявка принята"
+        modalContent.innerHTML = "Ваша заявка принята";
         replyModal.style.position = "fixed";
         replyModal.style.left = "38%";
         replyModal.style.top = "40%";
         closeBtn.addEventListener("click", (e) => {
           e.preventDefault();
           replyModal.classList.remove("show");
-          modalContent.innerHTML=""
+          modalContent.innerHTML = "";
         });
       }
     });
