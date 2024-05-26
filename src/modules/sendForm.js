@@ -57,7 +57,10 @@ const sendForm = () => {
             "Content-Type": "application/json; charset=UTF-8",
           },
         })
-          .then((res) => res.json())
+          .then((res) => {
+            res.json();
+            modalContent.innerHTML = "Ваша заявка принята";
+          })
           .catch((error) => error.message);
 
         userName.value = "";
@@ -69,7 +72,6 @@ const sendForm = () => {
         overlay.style.display = "none";
         document.body.style.overflow = "";
         replyModal.classList.add("show");
-        modalContent.innerHTML = "Ваша заявка принята";
         replyModal.style.position = "fixed";
         replyModal.style.left = "38%";
         replyModal.style.top = "40%";
