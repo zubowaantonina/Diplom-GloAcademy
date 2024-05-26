@@ -68,12 +68,14 @@ const sendForm = () => {
         overlay.style.display = "none";
         document.body.style.overflow = "";
         replyModal.classList.add("show");
+        modalContent.innerHTML = "Ваша заявка принята";
         replyModal.style.position = "fixed";
         replyModal.style.left = "38%";
         replyModal.style.top = "40%";
         closeBtn.addEventListener("click", (e) => {
           e.preventDefault();
           replyModal.classList.remove("show");
+          modalContent.innerHTML = "";
         });
       }
     });
