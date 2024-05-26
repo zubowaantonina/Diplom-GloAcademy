@@ -14,7 +14,20 @@ const sendForm = () => {
       const phoneRequestModal = document.querySelector(".header-modal");
       const servicesModal = document.querySelector(".services-modal");
       const total = document.getElementById("calc-total");
-
+      const closeAnswer = () => {
+        userName.value = "";
+        userPhone.value = "";
+        userPhone.classList.remove("error");
+        userName.classList.remove("error");
+        phoneRequestModal.style.display = "none";
+        servicesModal.style.display = "none";
+        overlay.style.display = "none";
+        document.body.style.overflow = "";
+        replyModal.classList.add("show");
+        replyModal.style.position = "fixed";
+        replyModal.style.left = "38%";
+        replyModal.style.top = "40%";
+      };
       let data = {
         name: userName.value,
         phone: userPhone.value,
@@ -52,21 +65,16 @@ const sendForm = () => {
           .then((res) => {
             res.json();
             modalContent.innerHTML = "Ваша заявка принята";
+            closeAnswer();
           })
-          .catch((error) => error.message);
+          .catch((error) => {
+            error.message;
+            console.log(error.message);
+            modalContent.innerHTML = "Ошибка...";
+            modalContent.style.cssText = "color: red; font-size:20px;";
+            closeAnswer();
+          });
 
-        userName.value = "";
-        userPhone.value = "";
-        userPhone.classList.remove("error");
-        userName.classList.remove("error");
-        phoneRequestModal.style.display = "none";
-        servicesModal.style.display = "none";
-        overlay.style.display = "none";
-        document.body.style.overflow = "";
-        replyModal.classList.add("show");
-        replyModal.style.position = "fixed";
-        replyModal.style.left = "38%";
-        replyModal.style.top = "40%";
         closeBtn.addEventListener("click", (e) => {
           e.preventDefault();
           replyModal.classList.remove("show");

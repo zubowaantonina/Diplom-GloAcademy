@@ -9,7 +9,7 @@ const validateForm = () => {
       e.target.value = e.target.value.replace(/[^а-яА-Яa-zA-Z ]/g, "");
     });
   });
-  const re = /^\d[\d\(\)\ -]{7,16}\d$/;
+  const re = /^\d[\d\(\)\ -]{7,14}\d$/;
   userPhones.forEach((input) => {
     input.addEventListener("input", (e) => {
       const valid = re.test(e.target.value);
