@@ -76,6 +76,6 @@ forms.forEach((form) => {
   });
 });
 
+}
 
-
-
+export default sendForm
