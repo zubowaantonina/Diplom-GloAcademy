@@ -8,6 +8,7 @@ const sendForm = () => {
       const userName = form.querySelector('input[name="fio"]');
       const userPhone = form.querySelector('input[name="phone"]');
       const replyModal = document.querySelector("#responseMessage");
+      const modalContent = replyModal.querySelector(".modal-content");
       const closeBtn = replyModal.querySelector(".btn.btn-success.fancyClose");
       const overlay = document.querySelector(".overlay");
       const phoneRequestModal = document.querySelector(".header-modal");
@@ -34,18 +35,10 @@ const sendForm = () => {
       userName.addEventListener("focusout", () => {
         userName.classList.remove("error");
       });
-
-      if (
-        !/[\d- ]{7,16}/.test(userPhone.value) ||
-        !(userPhone.value.match(/\d/g).length >= 7)
-      ) {
+      if (userPhone.value === "") {
         userPhone.classList.add("error");
-      } else {
-        userPhone.classList.remove("error");
       }
-      userPhone.addEventListener("focusout", () => {
-        userPhone.classList.remove("error");
-      });
+
       if (userName.closest(".error") || userPhone.closest(".error")) {
         return;
       } else {
@@ -56,7 +49,10 @@ const sendForm = () => {
             "Content-Type": "application/json; charset=UTF-8",
           },
         })
-          .then((res) => res.json())
+          .then((res) => {
+            res.json();
+            modalContent.innerHTML = "Ваша заявка принята";
+          })
           .catch((error) => error.message);
 
         userName.value = "";
@@ -74,10 +70,10 @@ const sendForm = () => {
         closeBtn.addEventListener("click", (e) => {
           e.preventDefault();
           replyModal.classList.remove("show");
+          modalContent.innerHTML = "";
         });
       }
     });
   });
-  // })
 };
 export default sendForm;
