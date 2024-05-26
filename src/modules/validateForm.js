@@ -3,7 +3,7 @@ const validateForm = () => {
   const userNames = document.querySelectorAll('input[name="fio"]');
   const userPhones = document.querySelectorAll('input[name="phone"]');
   const calcInputs = document.getElementById("calc-input");
-
+  
   userNames.forEach((input) => {
     input.addEventListener("input", (e) => {
       e.target.value = e.target.value.replace(/[^а-яА-Яa-zA-Z ]/g, "");
@@ -20,7 +20,7 @@ const validateForm = () => {
       }
     });
   });
-
+  
   if (body) {
     calcInputs.addEventListener("input", (e) => {
       e.target.value = e.target.value.replace(/[^0-9]/g, "");
