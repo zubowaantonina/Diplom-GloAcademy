@@ -10,7 +10,7 @@ import certificates from "./modules/certificates.js";
 scroll();
 servicesModal();
 modalRequest();
-timer("21 may 2024");
+timer("31 may 2024");
 validateForm();
 sendForm();
 calculator();
